@@ -1,0 +1,20 @@
+header {
+    background-color: rgba(216, 116, 34, 0.685);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu > ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.menu a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
