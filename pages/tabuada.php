@@ -1,16 +1,39 @@
 <?php
+    //Import do arquivo com variáveis e costantes
+    require_once('../modulo/config.php');
+
+    //Import do arquivo de funções para cálculos matemáticos
+    require_once('../modulo/calculos.php');
+    
     //Declaração das variáveis
-    $multiplicador = (int) 0;
-    $multiplicando = (int) 0;
+    $num1 = (int) 0;
+    $num2 = (int) 0;
     $resultado = (int) null;
+    $resultUser = (string) null;
 
     //Verificando se o botão foi clicado
     if(isset($_POST['btnCalc'])) {
         //Recebendo os dados do formulário
-        $multiplicador = $_POST['txtMultiplicador'];
-        $multiplicando = $_POST['txtMultiplicando'];
+        $num1 = $_POST['txtNum1'];
+        $num2 = $_POST['txtNum2'];
 
-        $resultado = $multiplicador * $multiplicando;
+        //Validação para tratamento de caixa vazia
+        if($_POST['txtNum1'] == null || $_POST['txtNum2'] == null) {
+            echo(ERRO_MSG_CAIXA_VAZIA);
+        } else {
+            if(!is_numeric($num1) || !is_numeric($num2)) {
+                echo(ERRO_MSG_CARACTER_INVALIDO_TEXTO);
+            } else {
+                if($num1 == 0) {
+                    echo(ERRO_MSG_TABUADA_ZERO);
+                } else {
+                    for($i = 0; $i <= $num1; $i++) {
+                        $resultado = operacaoMatematica($num1, $num2, "MULTIPLICAR");
+                        $resultUser .= $num2 . ' X ' . $i . ' = ' . $resultado . '<br>';
+                    }
+                }
+            }
+        }
     }
 ?>
 <!DOCTYPE html>
@@ -25,14 +48,14 @@
 <body>
     <form name="frmTabuada" method="post" action="tabuada.php">
         Multiplicador:
-        <input type="text" name="txtMultiplicador">
+        <input type="text" name="txtNum1">
         <br>
         Multiplicando:
-        <input type="text" name="txtMultiplicando">
+        <input type="text" name="txtNum2">
 
-        <input type="submit" name="btnCal" value="Calcular">
+        <input type="submit" name="btnCalc" value="Calcular">
 
-        <div id="resultado"><?=$resultado; ?></div>
+        <div id="resultado"><?=$resultUser; ?></div>
     </form>    
 
     <footer>Copyright 2022 © | Florbela Freitas</footer>

@@ -1,11 +1,18 @@
 <?php
+
+    //Import do arquivo de variáveis e constantes
+    require_once('../modulo/config.php');
+
+    //Import do arquivo de funções para cálculos matemáticos
+    require_once('../modulo/calculos.php');
+
     //Declaração de variáveis
     //nomeVar = (tipoDados) valorInicial
     $nota1 = (double) 0;
     $nota2 = (double) 0;
     $nota3 = (double) 0;
     $nota4 = (double) 0;
-    $media = (double) 0;
+    $resultadoMedia = (double) null;
 
     //Validação para tratar se o botão foi clicado
     if(isset($_POST["btncalc"])) {
@@ -18,13 +25,13 @@
 
          //Validação  para tratamento de caixa vazia
         if($_POST["txtn1"] == "" || $_POST["txtn2"] == "" || $_POST["txtn3"] == "" || $_POST["txtn4"] == "") {
-            echo('<p class="msgErro">Preencha todos os campos!</p>');
+            echo (ERRO_MSG_CARACTER_INVALIDO_TEXTO);
         } else {
             //Validação para tratamento de valores inválidos
             if(!is_numeric($nota1) || !is_numeric($nota2) || !is_numeric($nota3) || !is_numeric($nota4)) {
-                echo('<p class="msgErro">Todos os dados devem ser números!</p>');
+                echo (ERRO_MSG_CARACTER_INVALIDO_TEXTO);
             } else {
-                $media = ($nota1 + $nota2 + $nota3 + $nota4) / 4;
+                $resultadoMedia = calculoMedia($nota1, $nota2, $nota3, $nota4);
             }
         }
     }
@@ -45,7 +52,7 @@
             </header>
 
             <div id="form">
-                <form name="frmMedia" method="post" action="index.php">
+                <form name="frmMedia" method="post" action="media.php">
                     <div>
                         <label>Nota 1:</label>
                         <input type="text" name="txtn1" value="<?php echo($nota1)?>"  > 
@@ -76,8 +83,8 @@
                 </form>
 
             </div>
-            <footer id="resultado">
-                A média é: <?php echo($media); ?>
+            <footer id="resultadoMedia">
+                A média é: <?= $resultadoMedia; ?>
             </footer>
         </div>
         

@@ -51,11 +51,3 @@ input{
     float: left;
     text-align: left;
 }
-
-.msgErro{
-    font-family: verdana;
-    font-size: 1em;
-    color: rgb(252, 4, 4);
-    font-weight: bold;
-    text-align: center;
-}
