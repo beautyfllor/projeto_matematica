@@ -20,7 +20,7 @@
         $numInicial = $_POST['sltInicial'];
         $numFinal = $_POST['sltFinal'];
 
-        
+                
     }
     
 ?>
