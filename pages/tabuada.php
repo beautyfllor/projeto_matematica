@@ -1,4 +1,13 @@
 <?php
+
+    /******************************************************************
+    * Objetivo: Arquivo responsável pela aplicação 'tabuada', que cria 
+    uma tabuada de acordo com os números que o usuário inseriu.
+    * Autor: Florbela
+    * Data: 10/02/2022
+    * Versão: 1.0
+    ******************************************************************/
+
     //Import do arquivo com variáveis e costantes
     require_once('../modulo/config.php');
 
@@ -27,9 +36,9 @@
                 if($num1 == 0) {
                     echo(ERRO_MSG_TABUADA_ZERO);
                 } else {
-                    for($i = 0; $i <= $num1; $i++) {
-                        $resultado = operacaoMatematica($num1, $num2, "MULTIPLICAR");
-                        $resultUser .= $num2 . ' X ' . $i . ' = ' . $resultado . '<br>';
+                    for($i = 0; $i <= $num2; $i++) {
+                        $resultado = operacaoMatematica($num1, $i, "MULTIPLICAR");
+                        $resultUser .= $num1 . ' X ' . $i . ' = ' . $resultado . '<br>';
                     }
                 }
             }
@@ -47,10 +56,10 @@
 </head>
 <body>
     <form name="frmTabuada" method="post" action="tabuada.php">
-        Multiplicador:
+        Tabuada:
         <input type="text" name="txtNum1">
         <br>
-        Multiplicando:
+       Contador:
         <input type="text" name="txtNum2">
 
         <input type="submit" name="btnCalc" value="Calcular">

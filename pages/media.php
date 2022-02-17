@@ -1,5 +1,13 @@
 <?php
 
+    /******************************************************************
+    * Objetivo: Arquivo responsável pela aplicação 'media', que calcula
+    a média de acordo com os valores inseridos pelo usuário. 
+    * Autor: Florbela
+    * Data: 10/02/2022
+    * Versão: 1.0
+    ******************************************************************/
+
     //Import do arquivo de variáveis e constantes
     require_once('../modulo/config.php');
 
@@ -25,7 +33,7 @@
 
          //Validação  para tratamento de caixa vazia
         if($_POST["txtn1"] == "" || $_POST["txtn2"] == "" || $_POST["txtn3"] == "" || $_POST["txtn4"] == "") {
-            echo (ERRO_MSG_CARACTER_INVALIDO_TEXTO);
+            echo (ERRO_MSG_CAIXA_VAZIA);
         } else {
             //Validação para tratamento de valores inválidos
             if(!is_numeric($nota1) || !is_numeric($nota2) || !is_numeric($nota3) || !is_numeric($nota4)) {

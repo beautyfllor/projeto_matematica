@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+
+    <!-- /******************************************************************
+    * Objetivo: Arquivo responsável pela estrutura da página.
+    * Autor: Florbela
+    * Data: 10/02/2022
+    * Versão: 1.0
+    ******************************************************************/ -->
+
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">

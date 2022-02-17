@@ -1,73 +1,82 @@
 <?php
-//include() e require() -> Apenas importa o arquivo no php.
-//include_once() e require()_once -> O servidor realiza uma restrição para importar somente uma vez o arquivo (melhor opção).
 
-//Import do arquivo de configurações de variáveis e constantes
-require_once('../modulo/config.php');
+	/***************************************************************
+	* Objetivo: Arquivo responsável pela aplicação 'calculadora' que 
+	realiza a operação desejada com os números inseridos pelo usuário.
+    * Autor: Florbela
+    * Data: 10/02/2022
+    * Versão: 1.0
+    ***************************************************************/
 
-//Import do arquivo funções para cálculos matemáticos
-require_once('../modulo/calculos.php');
+	//include() e require() -> Apenas importa o arquivo no php.
+	//include_once() e require()_once -> O servidor realiza uma restrição para importar somente uma vez o arquivo (melhor opção).
 
-//Declaração das variáveis
-$valor1 = (float) 0;
-$valor2 = (float) 0;
-$resultado = (float) 0;
-$opcao = (string) null;
+	//Import do arquivo de configurações de variáveis e constantes
+	require_once('../modulo/config.php');
 
-/*
-	gettype() - verifica qual o tipo de dados de uma variavel
-	settype() - modifica o tipo de dados de uma variavel
+	//Import do arquivo funções para cálculos matemáticos
+	require_once('../modulo/calculos.php');
 
-	$nome = 7;
-	echo(gettype($nome));
-	settype($nome, 'string');
-	echo(gettype($nome));
-	*/
+	//Declaração das variáveis
+	$valor1 = (float) 0;
+	$valor2 = (float) 0;
+	$resultado = (float) 0;
+	$opcao = (string) null;
 
-//Validação para verificar se o botão foi clicado
-if (isset($_POST['btncalc'])) {
-	//Recebe os dados do formulário
-	$valor1 = $_POST['txtn1'];
-	$valor2 = $_POST['txtn2'];
+	/*
+		gettype() - verifica qual o tipo de dados de uma variavel
+		settype() - modifica o tipo de dados de uma variavel
 
-	//strtoupper - converte um texto para Maiusculo
-	//strtolower - converte um texto para minusculo
+		$nome = 7;
+		echo(gettype($nome));
+		settype($nome, 'string');
+		echo(gettype($nome));
+		*/
 
-	//Validação de tratamento de erro para caixa vazia
-	if ($_POST['txtn1'] == "" || $_POST['txtn2'] == "")
-		echo (ERRO_MSG_CAIXA_VAZIA);
-	else {
-		//Validação de tratamento de erro para rdo sem escolha
-		if (!isset($_POST['rdocalc']))
-			echo (ERRO_MSG_OPERACAO_CALCULO);
+	//Validação para verificar se o botão foi clicado
+	if (isset($_POST['btncalc'])) {
+		//Recebe os dados do formulário
+		$valor1 = $_POST['txtn1'];
+		$valor2 = $_POST['txtn2'];
+
+		//strtoupper - converte um texto para Maiusculo
+		//strtolower - converte um texto para minusculo
+
+		//Validação de tratamento de erro para caixa vazia
+		if ($_POST['txtn1'] == "" || $_POST['txtn2'] == "")
+			echo (ERRO_MSG_CAIXA_VAZIA);
 		else {
-			//Validação para tratamento de erro para dados incorretos
-			if (!is_numeric($valor1) || !is_numeric($valor2))
-				echo (ERRO_MSG_CARACTER_INVALIDO_TEXTO);
+			//Validação de tratamento de erro para rdo sem escolha
+			if (!isset($_POST['rdocalc']))
+				echo (ERRO_MSG_OPERACAO_CALCULO);
 			else {
-				//Apenas podemos receber o valor do rdo quando ele existir
-				$opcao = strtoupper($_POST['rdocalc']);
+				//Validação para tratamento de erro para dados incorretos
+				if (!is_numeric($valor1) || !is_numeric($valor2))
+					echo (ERRO_MSG_CARACTER_INVALIDO_TEXTO);
+				else {
+					//Apenas podemos receber o valor do rdo quando ele existir
+					$opcao = strtoupper($_POST['rdocalc']);
 
-				$resultado = operacaoMatematica($valor1, $valor2, $opcao);
+					$resultado = operacaoMatematica($valor1, $valor2, $opcao);
 
-				// //Processamento do calculo das operações
-				// if ($opcao == 'SOMAR')
-				// 	$resultado = $valor1 + $valor2;
-				// elseif ($opcao == 'SUBTRAIR')
-				// 	$resultado = $valor1 - $valor2;
-				// elseif ($opcao == 'MULTIPLICAR')
-				// 	$resultado = $valor1 * $valor2;
-				// elseif ($opcao == 'DIVIDIR') {
-				// 	//Validação para tratamento de erro da divisão por 0
-				// 	if($valor2 == 0)
-				// 		echo('<script> alert("Não é possível realizar divisão onde o valor 2 é igual a 0!"); </script>');
-				// 	else
-				// 		$resultado = $valor1 / $valor2;
-				// }
+					// //Processamento do calculo das operações
+					// if ($opcao == 'SOMAR')
+					// 	$resultado = $valor1 + $valor2;
+					// elseif ($opcao == 'SUBTRAIR')
+					// 	$resultado = $valor1 - $valor2;
+					// elseif ($opcao == 'MULTIPLICAR')
+					// 	$resultado = $valor1 * $valor2;
+					// elseif ($opcao == 'DIVIDIR') {
+					// 	//Validação para tratamento de erro da divisão por 0
+					// 	if($valor2 == 0)
+					// 		echo('<script> alert("Não é possível realizar divisão onde o valor 2 é igual a 0!"); </script>');
+					// 	else
+					// 		$resultado = $valor1 / $valor2;
+					// }
+				}
 			}
 		}
 	}
-}
 ?>
 
 <html>
