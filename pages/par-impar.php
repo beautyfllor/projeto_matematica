@@ -1,7 +1,13 @@
 <?php
     //Declaração das variáreis
+    $numInicial = null;
+    $numFinal = null;
     $num1Acumulador = '<option>Por favor selecione um número</option>';
     $num2Acumulador = '<option>Por favor selecione um número</option>';
+    $pares = null;
+    $impares = null;
+    $contPares = null;
+    $contImpares = null;
     $arrayPares = [];
     $arrayImpares = [];
 
@@ -19,8 +25,21 @@
         //Recebendo dados utilizando POST do formulário
         $numInicial = $_POST['sltInicial'];
         $numFinal = $_POST['sltFinal'];
-
-                
+        
+        //Looping para validar os números pares
+        for($i = $numInicial; $i <= $numFinal; $i++) {
+            if($i % 2 == 0) {
+                $pares = '<p>' . $i . '</p>';
+                $contPares++;
+                $arrayPares[$contPares] = $pares;
+            } else {
+                $impares = '<p>' . $i . '</p>';
+                $contImpares++;
+                $arrayImpares[$contImpares] = $impares;
+            }
+        }
+        $contPares = '<p> Quantidade de números pares: ' . $contPares . '</p>';
+        $contImpares = '<p> Quantidade de números ímpares: ' . $contImpares . '</p>';
     }
     
 ?>
@@ -42,13 +61,20 @@
         <input type="submit" name="btnCalc" value="Calcular">
 
         <div id="numPares">
-
+            <?php
+                foreach($arrayPares as $value) {
+                    echo($value);
+                }
+            ?>
         </div>
 
         <div id="numImpares">
-
+        <?php
+            foreach($arrayImpares as $value) {
+                echo($value);
+            }
+            ?>
         </div>
-
     </form>
 </body>
 </html>
