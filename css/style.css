@@ -1,9 +1,12 @@
 body {
     width: 100vw;
     height: 100vh;
-    background-image: url();
     background-size: cover;
     background-position: right top;
-    background-color: rgba(0, 0, 0, 0.575);
-    background-blend-mode: darken;
+    background-color: whitesmoke;
+}
+
+footer {
+    text-align: center;
+    margin-top: 10%;
 }

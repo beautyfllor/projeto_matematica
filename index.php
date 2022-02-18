@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="./css/style.css"/>
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/home.css">
-    <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/main.css">
     <title>Math Project</title>
 </head>
@@ -36,6 +35,8 @@
     </header>
     <main>
         <h1>Projeto Matemática</h1>
+        <h2>Olá, seja bem-vindo(a)!</h2>
+        <p>Você está no lugar certo para realizar seus cálculos!</p>
     </main>
     <footer>Copyright 2022 © | Florbela Freitas</footer>
 </body>

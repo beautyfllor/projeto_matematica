@@ -1,6 +1,7 @@
 #conteudo{
     width: 400px;
     height: 300px;
+    margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
     border: solid 1px #000000;
@@ -36,13 +37,14 @@ input{
 #resultado{
     width: 200px;
     height: 110px;
-    background-color: cornflowerblue;
+    background-color: #3b5598;
     box-sizing: border-box;
     padding-top: 2px;
     font-family: cursive;
     font-size: 20px;
     font-weight: bold;
     float: left;
+    color: white;
 }
 
 #container_opcoes{
@@ -50,4 +52,9 @@ input{
     height: 50px;
     float: left;
     text-align: left;
+}
+
+footer{
+    text-align: center;
+    margin-top: 5%;
 }

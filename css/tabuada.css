@@ -1,0 +1,22 @@
+.formulario {
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: auto;
+    width: 30%;
+    border: 2px solid black;
+}
+
+.resultado{
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+    margin-left: 20%;
+    width: 50%;
+    border: 2px solid black;
+    background-color: #3b5998;
+    color: white;
+}
+
+footer{
+    text-align: center;
+    margin-top: 5%;
+}

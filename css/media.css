@@ -3,6 +3,7 @@
     height: 300px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 5%;
     border: solid 1px #000000;
     text-align: center;
 
@@ -36,7 +37,8 @@ input{
 #resultadoMedia{
     width: inherit;
     height: 35px;
-    background-color: cornflowerblue;
+    background-color: #3b5998;
+    color: white;
     box-sizing: border-box;
     padding-top: 2px;
     font-family: cursive;
@@ -68,6 +70,11 @@ input{
     color: rgb(252, 4, 4);
     font-weight: bold;
     text-align: center;
+}
+
+footer{
+    text-align: center;
+    margin-top: 5%;
 }
 
 

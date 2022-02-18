@@ -49,15 +49,33 @@
 <html lang="pt-BR">
     <head>
         <title>Média</title>
-       <link rel="stylesheet" type="text/css" href="../css/media.css">
+        <link rel="stylesheet" href="../css/reset.css"/>
+	    <link rel="stylesheet" href="../css/style.css"/>
+        <link rel="stylesheet" href="../css/header.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/footer.css">
+        <link rel="stylesheet" type="text/css" href="../css/media.css">
         <meta charset="utf-8">
     </head>
 	<body>
+
+    <header>
+        <!-- Barra de navegação -->
+        <nav class="menu">
+            <ul>
+                <li><a href="../index.php">Home</a></li>
+                <li><a href="../pages/calculadora.php">Calculadora</a></li>
+                <li><a href="../pages/media.php">Média</a></li>
+                <li><a href="../pages/par-impar.php">Par ou ímpar</a></li>
+                <li><a href="../pages/tabuada.php">Tabuada</a></li>
+            </ul>
+        </nav>
+    </header>
         
         <div id="conteudo">
-            <header id="titulo">
+            <div id="titulo">
                 Calculo de Médias
-            </header>
+            </div>
 
             <div id="form">
                 <form name="frmMedia" method="post" action="media.php">
@@ -91,12 +109,11 @@
                 </form>
 
             </div>
-            <footer id="resultadoMedia">
+            <div id="resultadoMedia">
                 A média é: <?= $resultadoMedia; ?>
-            </footer>
+            </div>
         </div>
-        
-		
+        <footer>Copyright 2022 © | Florbela Freitas</footer>
 	</body>
 
 </html>

@@ -76,20 +76,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css"/>
+	<link rel="stylesheet" href="../css/style.css"/>
+	<link rel="stylesheet" href="../css/header.css">
+	<link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/par-impar.css">
     <title>Par ou Ímpar?</title>
 </head>
 
 <body>
-    <form name="frmParImpar" method="post" action="par-impar.php">
-        <p>N° Inicial</p>
+    <header>
+        <!-- Barra de navegação -->
+        <nav class="menu">
+            <ul>
+                <li><a href="../index.php">Home</a></li>
+                <li><a href="../pages/calculadora.php">Calculadora</a></li>
+                <li><a href="../pages/media.php">Média</a></li>
+                <li><a href="../pages/par-impar.php">Par ou ímpar</a></li>
+                <link rel="stylesheet" href="../css/footer.css">
+                <li><a href="../pages/tabuada.php">Tabuada</a></li>
+            </ul>
+        </nav>
+    </header>
+    <form name="frmParImpar" class="formulario" method="post" action="par-impar.php">
+        <p>N° Inicial:</p>
         <select name="sltInicial"><?= $num1Acumulador; ?></select>
-        <p>N° Final</p>
+        <p class="final">N° Final:</p>
         <select name="sltFinal"><?= $num2Acumulador; ?></select>
 
         <input type="submit" name="btnCalc" value="Calcular">
 
-        <div id="numPares">
+        <p>Números pares:</p>
+        <div class="numPares">
             <?php
             foreach ($arrayPares as $value) {
                 echo ($value);
@@ -98,7 +116,8 @@
             ?>
         </div>
 
-        <div id="numImpares">
+        <p>Números Ímpares:</p>
+        <div class="numImpares">
             <?php
             foreach ($arrayImpares as $value) {
                 echo ($value);
@@ -107,6 +126,7 @@
             ?>
         </div>
     </form>
+    <footer>Copyright 2022 © | Florbela Freitas</footer>
 </body>
 
 </html>

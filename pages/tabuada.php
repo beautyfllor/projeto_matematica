@@ -50,21 +50,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css"/>
+	<link rel="stylesheet" href="../css/style.css"/>
+	<link rel="stylesheet" href="../css/header.css">
+	<link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/tabuada.css">
-    <link rel="stylesheet" href="../css/footer.css">
     <title>Tabuada</title>
 </head>
 <body>
-    <form name="frmTabuada" method="post" action="tabuada.php">
-        Tabuada:
+    <header>
+            <!-- Barra de navegação -->
+            <nav class="menu">
+                <ul>
+                    <li><a href="../index.php">Home</a></li>
+                    <li><a href="../pages/calculadora.php">Calculadora</a></li>
+                    <li><a href="../pages/media.php">Média</a></li>
+                    <li><a href="../pages/par-impar.php">Par ou ímpar</a></li>
+                    <link rel="stylesheet" href="../css/footer.css">
+                    <li><a href="../pages/tabuada.php">Tabuada</a></li>
+                </ul>
+            </nav>
+        </header>
+    <form name="frmTabuada" class="formulario" method="post" action="tabuada.php">
+        <p>Tabuada:</p>
         <input type="text" name="txtNum1">
         <br>
-       Contador:
+       <p>Contador:</p>
         <input type="text" name="txtNum2">
 
         <input type="submit" name="btnCalc" value="Calcular">
 
-        <div id="resultado"><?=$resultUser; ?></div>
+        <div class="resultado"><?=$resultUser; ?></div>
     </form>    
 
     <footer>Copyright 2022 © | Florbela Freitas</footer>
