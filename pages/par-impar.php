@@ -106,24 +106,28 @@
 
         <input type="submit" name="btnCalc" value="Calcular">
 
-        <p>Números pares:</p>
+        <p class="pares">Números pares:</p>
         <div class="numPares">
             <?php
             foreach ($arrayPares as $value) {
                 echo ($value);
             }
-            echo ($contPares);
             ?>
         </div>
+        <div class="contPares">
+        <?php echo ($contPares);?>
+        </div>
 
-        <p>Números Ímpares:</p>
+        <p class="impares">Números Ímpares:</p>
         <div class="numImpares">
             <?php
             foreach ($arrayImpares as $value) {
                 echo ($value);
             }
-            echo ($contImpares);
             ?>
+        </div>
+        <div class="contImpares">
+        <?php echo ($contImpares);?>
         </div>
     </form>
     <footer>Copyright 2022 © | Florbela Freitas</footer>
